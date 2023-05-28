@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>slightly annoying qr shenron generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </head>
+  <body>
+
+    <!-- this is the start of content -->
+    <form id="dbl-qr" method="POST" action="/" enctype="multipart/form-data">
+      <label for="qrcode">Upload a recent QRcode generated with your own account :</label>
+      <input type="file" id="qrcode" name="qrcode" required />
+      <input type="hidden" id="qrcode_b64" />
+
+      <fieldset>
+        <legend>
+          Enter up to three friend codes to generate QR codes with.
+        </legend>
+
+        <input type="text" minlength="8" maxlength="8" placeholder="Friend 1 ..." autocomplete="dbl-qr-1" name="dbl-qr-1" />
+        <input type="text" minlength="8" maxlength="8" placeholder="Friend 2 ..." autocomplete="dbl-qr-1" name="dbl-qr-2" />
+        <input type="text" minlength="8" maxlength="8" placeholder="Friend 3 ..." autocomplete="dbl-qr-1" name="dbl-qr-3" />
+      </fieldset>
+
+      <input type="submit" value="Display codes" />
+    </form>
+
+    <div class="qr-display">
+      <div id="qr-display-1"></div>
+      <div id="qr-display-2"></div>
+      <div id="qr-display-3"></div>
+    </div>
+
+    <script type="text/javascript" src="libraries/jsqrcode/grid.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/version.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/detector.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/formatinf.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/errorlevel.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/bitmat.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/datablock.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/bmparser.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/datamask.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/rsdecoder.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/gf256poly.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/gf256.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/decoder.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/qrcode.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/findpat.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/alignpat.js"></script>
+    <script type="text/javascript" src="libraries/jsqrcode/databr.js"></script>
+
+    <script type="text/javascript" src="qr.js"></script>
+  </body>
+</html>
