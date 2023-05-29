@@ -19,11 +19,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
       {input: friendInput3, display: qrDisplay3 },
     ];
 
+    const yourFckingFile = document.querySelector('#qrcode').value;
+    const fileNameContainer = document.querySelector('.fileName');
+
     fileField.addEventListener("change", async function({target}){
      if (target.files && target.files.length) {
           try {
             const uploadedImageBase64 = await convertFileToBase64(target.files[0]);
             qrField.value = uploadedImageBase64;
+            fileNameContainer.innerHTML = yourFckingFile;
           } catch(Throwable) {
             //handle error
           }
