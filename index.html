@@ -13,18 +13,24 @@
 
     <!-- this is the start of content -->
     <form id="dbl-qr" method="POST" action="/" enctype="multipart/form-data">
-      <label for="qrcode">Upload a recent QRcode generated with your own account :</label>
-      <input type="file" id="qrcode" name="qrcode" required />
-      <input type="hidden" id="qrcode_b64" />
-
-      <fieldset>
+      <h2>
+        Upload a recent QRcode generated with your own account :
+      </h2>
+      <div class="upload-qr-code">
+        <input type="file" id="qrcode" name="qrcode" required />
+        <label for="qrcode" class="button">Choose a file</label>
+        <input type="hidden" id="qrcode_b64" />
+      </div>
+      
+      <fieldset class="friends">
         <legend>
           Enter up to three friend codes to generate QR codes with.
         </legend>
-
-        <input type="text" minlength="8" maxlength="8" placeholder="Friend 1 ..." autocomplete="dbl-qr-1" name="dbl-qr-1" />
-        <input type="text" minlength="8" maxlength="8" placeholder="Friend 2 ..." autocomplete="dbl-qr-1" name="dbl-qr-2" />
-        <input type="text" minlength="8" maxlength="8" placeholder="Friend 3 ..." autocomplete="dbl-qr-1" name="dbl-qr-3" />
+        <div class="friend-label">
+          <input type="text" minlength="8" maxlength="8" placeholder="Friend 1 ..." autocomplete="dbl-qr-1" name="dbl-qr-1" />
+          <input type="text" minlength="8" maxlength="8" placeholder="Friend 2 ..." autocomplete="dbl-qr-1" name="dbl-qr-2" />
+          <input type="text" minlength="8" maxlength="8" placeholder="Friend 3 ..." autocomplete="dbl-qr-1" name="dbl-qr-3" />  
+        </div>
       </fieldset>
 
       <input type="submit" value="Display codes" />
