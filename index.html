@@ -13,9 +13,28 @@
 
     <!-- this is the start of content -->
     <form id="dbl-qr" method="POST" action="/" enctype="multipart/form-data">
-      <label for="qrcode">Upload a recent QRcode generated with your own account :</label>
-      <input type="file" id="qrcode" name="qrcode" required />
-      <input type="hidden" id="qrcode_b64" />
+      <fieldset class="qr-method">
+        <legend>
+          (NEW) QR generation method
+        </legend>
+
+        <input id="qr-auto" type="radio" name="qr-method" value="auto" checked />
+        <label for='qr-auto'>
+          Auto : No file needed. Might fail in some circumstances, try manual if you have an expired code message.
+        </label>
+        <br />
+
+        <input id="qr-manual" type="radio" name="qr-method" value="manual" />
+        <label for='qr-manual'>
+          Manual : Upload a recently generated code from your account (or otherwise). Use if auto fails.
+        </label>
+        <br /><br />
+
+        <label for="qrcode">Upload a recent QRcode generated with your own account :</label>
+        <input type="file" id="qrcode" name="qrcode" />
+        <input type="hidden" id="qrcode_b64" />
+      </fieldset>
+
 
       <fieldset>
         <legend>
