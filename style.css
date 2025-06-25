@@ -5,3 +5,34 @@
   gap: 5px;
   flex-wrap: wrap;
 }
+
+.contact {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    li {
+        list-style: none;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .qr-display {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10vh;
+        margin-top: 30px;
+    }
+
+    .contact {
+        position: revert;
+        display: flex;
+        margin-top: 20vh;
+    }
+}
